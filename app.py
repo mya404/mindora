@@ -8,7 +8,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 try:
     from google import genai
-except ImportError:  # pragma: no cover - installed on deploy.
+except ImportError:  
     genai = None
 
 
@@ -141,9 +141,6 @@ def main() -> None:
 
     st.title("Mindora")
     st.caption("A simple student mental health companion chatbot.")
-
-    if not get_api_key():
-        st.info("Set GEMINI_API_KEY in Streamlit Secrets before deploying.")
 
     ensure_state()
 
